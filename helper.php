@@ -298,7 +298,10 @@ class helper_plugin_include extends DokuWiki_Plugin { // DokuWiki_Helper_Plugin
                 case 'section_close':
                     if ($flags['inline'])
                         unset($ins[$i]);
+                    break;
                 case 'internallink':
+                    $ins[$i][1][0] = str_replace($replacers['keys'], $replacers['vals'], $ins[$i][1][0]);
+            	    $ins[$i][1][0] = preg_replace('/'.BEGIN_REPLACE_DELIMITER.'.*'.END_REPLACE_DELIMITER.'/', '', $ins[$i][1][0]);
                 case 'internalmedia':
                     // make sure parameters aren't touched
                     $link_params = '';
