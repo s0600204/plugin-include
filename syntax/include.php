@@ -125,6 +125,8 @@ class syntax_plugin_include_include extends DokuWiki_Syntax_Plugin {
 
     /**
      * Handles the replacement array
+     * 
+     * @author		Jonathan Arkell <jonnay@jonnay.net>
      */
     function _massageReplacers($replacers) {
         $r = array();

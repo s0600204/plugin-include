@@ -178,12 +178,12 @@ class helper_plugin_include extends DokuWiki_Plugin { // DokuWiki_Helper_Plugin
     }
 
     /**
-     * Returns the converted instructions of a give page/section
+     * Returns the converted instructions of a given page/section
      *
      * @author Michael Klier <chi@chimeric.de>
      * @author Michael Hamann <michael@content-space.de>
      */
-    function _get_instructions($page, $sect, $mode, $lvl, $flags, $replacers, $root_id = null) {
+    function _get_instructions($page, $sect, $mode, $lvl, $flags, $replacers = null, $root_id = null) {
         $key = ($sect) ? $page . '#' . $sect : $page;
         $this->includes[$key] = true; // legacy code for keeping compatibility with other plugins
 
